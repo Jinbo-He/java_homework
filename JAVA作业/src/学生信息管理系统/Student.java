@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Student{
     String name,num; boolean sex;int age;double score;
     Student( String name,int age,boolean sex,String num,double score ){

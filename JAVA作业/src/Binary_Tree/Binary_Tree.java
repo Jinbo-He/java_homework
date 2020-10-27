@@ -1,3 +1,5 @@
+package Binary_Tree;
+
 import java.util.Scanner;
 
 class Read_String{
@@ -7,8 +9,7 @@ class Read_String{
         data = x ;
     }
     char read(){
-        char temp = data.charAt(pos++);
-        return temp;
+        return data.charAt(pos++);
     }
 }
 
@@ -17,7 +18,7 @@ class Binary_Tree {
     char data ;
     Binary_Tree(char c){
         data=c;
-    }//牛逼之处在于 他可以自己选择是否初始化或者赋值！
+    }// 他可以自己选择是否要参！
     Binary_Tree(){}
     //确定root  if 节点为# return null  else 给左右节点赋值
     Binary_Tree create(Read_String r){
@@ -57,7 +58,7 @@ class Binary_Tree {
             t.Right.after();
         System.out.print(t.data);
     }
-    class Stack{
+    static class Stack{
         Binary_Tree[] x;
         int top;
         Stack(int maxsize){
@@ -119,22 +120,23 @@ class operate{
         Binary_Tree root = new Binary_Tree();
         root = root.create(getchar);
 
-        System.out.println("前序如上:");
-        root.pre();
+        if(root !=null) {
+            System.out.println("前序如上:");
+            root.pre();
 
 
-        System.out.println("中序如上:");
-        root.in();
+            System.out.println("中序如上:");
+            root.in();
 
-        System.out.println("后序如上:");
-        root.after();
+            System.out.println("后序如上:");
+            root.after();
 
-        System.out.println("非递归前序:");
-        root.preN();
+            System.out.println("非递归前序:");
+            root.preN();
 
-        System.out.println("非递归中序:");
-        root.inN();
-
+            System.out.println("非递归中序:");
+            root.inN();
+        }
 
 
     }
